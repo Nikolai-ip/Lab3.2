@@ -6,16 +6,19 @@
     border: 3px solid black;
     border-radius: 10px;
 }
+
 .text {
     margin: 10px;
-    font-family:Calibri;
+    font-family: Calibri;
 }
+
 #scales {
     width: 200px;
 }
+
 button {
-    width:150px;
-   position:relative;
-   left:110px;
+    width: 150px;
+    position: relative;
+    left: 110px;
     margin: 8px;
 }
