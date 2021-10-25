@@ -3,6 +3,8 @@ if (navigator.cookieEnabled === false) {
 }
 let k;
 k++;
-document.cookie = k;
+let number;
+number=document.cookie = k;
 document.cookie = "name=user";
 console.log(document.cookie);
+console.log(number);
