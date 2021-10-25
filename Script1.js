@@ -1,6 +1,7 @@
 let k = 0;
-document.cookie = k;
+
 k++;
+document.cookie = `${k}; expires=/; path=/`;
 Input = document.getElementById("visits").value;
 Input.value = k;
 document.cookie = "name=oeschger";
