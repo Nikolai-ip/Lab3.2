@@ -1,10 +1,5 @@
-if (navigator.cookieEnabled === false) {
-    alert("Cookies отключены!");
+document.cookie = "name=oeschger";
+document.cookie = "favorite_food=tripe";
+function alertCookie() {
+    console.log(document.cookie);
 }
-let k;
-k++;
-let number;
-number=document.cookie = k;
-document.cookie = "name=user";
-console.log(document.cookie);
-console.log(number);
