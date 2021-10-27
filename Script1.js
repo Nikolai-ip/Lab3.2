@@ -1,4 +1,3 @@
-
 function getCookie(name) {
     let matches = document.cookie.match(new RegExp(
         "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
@@ -6,7 +5,6 @@ function getCookie(name) {
     return matches ? decodeURIComponent(matches[1]) : undefined;
 }
 function setCookie(name, value, options = {}) {
-
     options = {
         path: '/',
         // при необходимости добавьте другие значения по умолчанию
@@ -33,16 +31,19 @@ function setCookie(name, value, options = {}) {
 let name = document.getElementById("name"); //имя пользователя
 
 let number = 1; //количество посещений
-
-setCookie('visits', number, { secure: true, 'max-age': 3600 });
 let cookies = getCookie('visits');
-number = cookies + 1;
-console.log(number);
-console.log(getCookie('visits'));
+
+if (cookies == null) {
+    setCookie('visits', number, { secure: true, 'max-age': 3600 });
+} else {
+    number = cookies + 1;
+    setCookie('visits', number, { secure: true, 'max-age': 3600 });
+    console.log('Cookie to set to ' + number);
+}
+
 document.getElementById("visits").value = getCookie('visits');
 
 function reset() {
-
 }
 
 function signOn() {
