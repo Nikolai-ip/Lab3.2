@@ -29,13 +29,14 @@ function setCookie(name, value, options = {}) {
 }
 
 
-let count = getCookie('count'); //���������� ���������
-if (count === undefined) {
+let count = getCookie('count'); 
+if (count == undefined) {
     count = 0;
 }
 setCookie('count', ++count);
-document.getElementById("visits").value = getCookie('count');
-function reset() {
+document.getElementById("visits").value = getCookie('count'); //установка значения в поле 
+
+function reset() { // срабатывет при нажатии на button 
     setCookie('count', 0);
 }
 
