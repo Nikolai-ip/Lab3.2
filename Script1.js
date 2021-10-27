@@ -34,9 +34,10 @@ let name = document.getElementById("name"); //имя пользователя
 
 let number = 0; //количество посещений
 setCookie('visits', number++, { secure: true, 'max-age': 3600 });
-document.getElementById("visits").value = getCookie('visits');
 console.log(number);
 console.log(getCookie('visits'));
+document.getElementById("visits").value = getCookie('visits');
+
 function reset() {
 
 }
