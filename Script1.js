@@ -36,13 +36,27 @@ if (count === undefined) {
 setCookie('count', ++count);
 document.getElementById("countText").innerHTML = "number of visits this page: " + getCookie('count');
 function reset() {
-    setCookie('count', 0);
+    setCookie('count', 0,{ secure: true, 'max-age': 3600 });
 }
 
-let date = new Date();
-let dateOld = new Date();
-setCookie('dateOld', dateOld.getTime());
-document.getElementById("time").value = date.getTime - getCookie('dateOld');
+
+if (getCookie('date') == undefined) {
+    setCookie('date', date.getTime(), { secure: true, 'max-age': 3600 });
+    document.getElementById("time").value = "";
+}
+else {
+    let currentDate = new Date();
+    let previousDate = new Date(Number(getCookie('date')));
+    let delay = currentDate - previousDate;
+    let months = Math.floor(delay / (30 * 24 * 60 * 60 * 1000));
+    let days = Math.floor(delay / (24 * 60 * 60 * 1000)) % 30;
+    let hours = Math.floor(delay / (60 * 60 * 1000)) % 24;
+    let minutes = Math.floor(delay / (60 * 1000)) % 60;
+    let secunds = Math.floor(delay / 1000) % 60;
+    document.getElementById("time").value = months + " " + days + " " + hours + " " + minutes + " " + secunds + " ";
+    setCookie('date', new Date().getTime());
+}
+
 
 let name = document.getElementById("name"); //имя пользователя
 function signOn() {
