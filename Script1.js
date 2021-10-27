@@ -36,8 +36,7 @@ if (count === undefined) {
 setCookie('count', ++count);
 document.getElementById("countText").innerHTML = "number of visits this page: " + getCookie('count');
 function reset() {
-    count = undefined;
-    setCookie('count', count);
+    setCookie('count', 0);
 }
 
 let date = new Date();
