@@ -30,17 +30,14 @@ function setCookie(name, value, options = {}) {
 
 let name = document.getElementById("name"); //имя пользователя
 
-let number = 1; //количество посещений
-let cookies = getCookie('visits');
-
-if (cookies == undefined) {
-    setCookie('visits', number, { secure: true, 'max-age': 3600 });
-} else {
-    number = cookies + 1;
-    setCookie('visits', number, { secure: true, 'max-age': 3600 });
+let count = getCookie('count');
+if (count === undefined) {
+    count = 0
 }
 
-document.getElementById("visits").value = getCookie('visits');
+setCookie('count', ++count);
+
+document.getElementById("visits").value = getCookie('count');
 
 function reset() {
 }
