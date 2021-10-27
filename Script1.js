@@ -31,12 +31,12 @@ function setCookie(name, value, options = {}) {
 
 let count = getCookie('count'); //количество посещений
 if (count === undefined) {
-    count = 0
+    count = 0;
 }
 setCookie('count', ++count);
 document.getElementById("countText").innerHTML = "number of visits this page: " + getCookie('count');
 function reset() {
-    count = 0
+    count = undefined;
 }
 
 let date = new Date();
