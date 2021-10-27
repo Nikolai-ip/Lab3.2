@@ -33,9 +33,11 @@ let name = document.getElementById("name"); //имя пользователя
 let count = getCookie('count');
 if (count === undefined) {
     count = 0
+    setCookie('count', count);
 }
 else {
     count++;
+    console.log(typeof (count));
     setCookie('count', count);
 }
 
