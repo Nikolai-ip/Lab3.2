@@ -37,10 +37,13 @@ setCookie('count', ++count);
 document.getElementById("countText").innerHTML = "number of visits this page: " + getCookie('count');
 function reset() {
     count = undefined;
+    setCookie('count', count);
 }
 
 let date = new Date();
-setCookie('date', date);
+let dateOld = new Date();
+setCookie('dateOld', dateOld.getTime());
+document.getElementById("time").value = date.getTime - getCookie('dateOld');
 
 let name = document.getElementById("name"); //имя пользователя
 function signOn() {
