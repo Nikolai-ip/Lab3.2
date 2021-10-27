@@ -7,7 +7,7 @@ function getCookie(name) {
 function setCookie(name, value, options = {}) {
     options = {
         path: '/',
-        // при необходимости добавьте другие значения по умолчанию
+        // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         ...options
     };
 
@@ -29,14 +29,14 @@ function setCookie(name, value, options = {}) {
 }
 
 
-let count = getCookie('count'); //количество посещений
+let count = getCookie('count'); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 if (count === undefined) {
     count = 0;
 }
 setCookie('count', ++count);
 document.getElementById("countText").innerHTML = "number of visits this page: " + getCookie('count');
 function reset() {
-    setCookie('count', 0,{ secure: true, 'max-age': 3600 });
+    setCookie('count', undefined, { secure: true, 'max-age': 3600 });
 }
 
 
@@ -58,7 +58,7 @@ else {
 }
 
 
-let name = document.getElementById("name"); //имя пользователя
+let name = document.getElementById("name"); //пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 function signOn() {
     setCookie('name', name.value, { secure: true, 'max-age': 3600 });
 }
