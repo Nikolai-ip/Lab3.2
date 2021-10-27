@@ -5,7 +5,7 @@ function signOn() {
 console.log(getCookie('name'));
 if (getCookie('name') != undefined) {
     document.getElementById("Hello").value = getCookie('name');   
-    document.getElementById("button_sign").style.display = "block";
+    document.getElementById("button_sign").style.display = "none";
 }
 
 
