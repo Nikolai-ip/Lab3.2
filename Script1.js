@@ -1,8 +1,19 @@
-let name = document.getElementById("name");
+let name = document.getElementById("name"); //имя пользователя
+
+let number = 0; //количество посещений
+number++;
+setCookie('visits', number, { secure: true, 'max-age': 3600 });
+document.getElementById("visits").value = getCookie('visits');
+console.log(number);
+console.log(getCookie('visits'));
+function reset() {
+
+}
+
 function signOn() {
     setCookie('name', name.value, { secure: true, 'max-age': 3600 });
 }
-console.log(getCookie('name'));
+
 if (getCookie('name') != undefined) {
     document.getElementById("Hello").value = getCookie('name');   
     document.getElementById("button_sign").style.display = "none";
