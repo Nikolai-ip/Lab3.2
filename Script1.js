@@ -33,7 +33,7 @@ let name = document.getElementById("name"); //имя пользователя
 let number = 1; //количество посещений
 let cookies = getCookie('visits');
 
-if (cookies == null) {
+if (cookies == undefined) {
     setCookie('visits', number, { secure: true, 'max-age': 3600 });
 } else {
     number = cookies + 1;
