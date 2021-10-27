@@ -28,26 +28,25 @@ function setCookie(name, value, options = {}) {
     document.cookie = updatedCookie;
 }
 
-let name = document.getElementById("name"); //имя пользователя
 
-
-let count = getCookie('count');
+let count = getCookie('count'); //количество посещений
 if (count === undefined) {
     count = 0
 }
-
 setCookie('count', ++count);
 document.getElementById("countText").innerHTML = "number of visits this page: " + getCookie('count');
-
-
 function reset() {
+    count = 0
 }
 
+let date = new Date();
+setCookie('date', date);
+
+let name = document.getElementById("name"); //имя пользователя
 function signOn() {
     setCookie('name', name.value, { secure: true, 'max-age': 3600 });
 }
-
 if (getCookie('name') != undefined) {
-    document.getElementById("hello").innerHTML = "Hello"+getCookie('name')+"!";
+    document.getElementById("Hello").value = getCookie('name');
     document.getElementById("button_sign").style.display = "none";
 }
