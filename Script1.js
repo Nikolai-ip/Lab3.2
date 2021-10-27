@@ -1,6 +1,5 @@
 let name = document.getElementById("name");
 function signOn() {
-    console.log(name);
     setCookie('name', name.value, { secure: true, 'max-age': 3600 });
 }
 console.log(getCookie('name'));
