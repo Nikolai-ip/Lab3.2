@@ -33,8 +33,7 @@ function setCookie(name, value, options = {}) {
 let name = document.getElementById("name"); //имя пользователя
 
 let number = 0; //количество посещений
-number++;
-setCookie('visits', number, { secure: true, 'max-age': 3600 });
+setCookie('visits', number++, { secure: true, 'max-age': 3600 });
 document.getElementById("visits").value = getCookie('visits');
 console.log(number);
 console.log(getCookie('visits'));
