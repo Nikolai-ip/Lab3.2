@@ -36,7 +36,7 @@ if (count === undefined) {
 setCookie('count', ++count);
 document.getElementById("visits").value = getCookie('count');
 function reset() {
-    setCookie('count', undefined, { secure: true, 'max-age': 3600 });
+    setCookie('count', 0);
 }
 
 
