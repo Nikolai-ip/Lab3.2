@@ -34,7 +34,11 @@ let count = getCookie('count');
 if (count === undefined) {
     count = 0
 }
-setCookie('count', Number(count++));
+else {
+    count++;
+    setCookie('count', count);
+}
+
 
 document.getElementById("visits").value = getCookie('count');
 
