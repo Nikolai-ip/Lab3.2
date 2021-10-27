@@ -38,7 +38,6 @@ if (cookies == null) {
 } else {
     number = cookies + 1;
     setCookie('visits', number, { secure: true, 'max-age': 3600 });
-    console.log('Cookie to set to ' + number);
 }
 
 document.getElementById("visits").value = getCookie('visits');
