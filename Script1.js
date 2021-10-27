@@ -36,10 +36,9 @@ if (count == undefined) {
 setCookie('count', ++count);
 document.getElementById("visits").value = getCookie('count'); //установка значения в поле 
 
-function reset() { // срабатывет при нажатии на button 
+document.querySelector("#reset").addEventListener("click", () => {
     setCookie('count', 0);
-}
-
+})
 
 if (getCookie('date') === undefined) {
     setCookie('date', new Date().getTime());
