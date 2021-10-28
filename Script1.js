@@ -38,6 +38,8 @@ document.getElementById("visits").value = getCookie('count'); //установк
 
 document.querySelector("#reset").addEventListener("click", () => {
     setCookie('count', 0);
+    setCookie('namme', "");
+    setCookie('date', 0);
 })
 
 if (getCookie('date') === undefined) {
@@ -58,11 +60,13 @@ else {
 }
 
 
-let name = document.getElementById("name"); //��� ������������
-function signOn() {
-    setCookie('name', name.value, { secure: true, 'max-age': 3600 });
-}
-if (getCookie('name') != undefined) {
-    document.getElementById("Hello").value = getCookie('name');
-    document.getElementById("button_sign").style.display = "none";
+let name = document.getElementById("name");
+if (name == "Kolya" || name == "Vasya") {
+    function signOn() {
+        setCookie('name', name.value, { secure: true, 'max-age': 3600 });
+    }
+    if (getCookie('name') != undefined) {
+        document.getElementById("Hello").value = getCookie('name');
+        document.getElementById("button_sign").style.display = "none";
+    }
 }
